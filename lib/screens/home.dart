@@ -39,11 +39,24 @@ class _ImagesWidgetState extends State<ImagesWidget> {
     final ButtonStyle style =
     ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
 
-    return GridView.count(
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 2,
-        crossAxisCount: 3,
-        children: imageList
+    // return GridView.count(
+    //     mainAxisSpacing: 10,
+    //     crossAxisSpacing: 2,
+    //     crossAxisCount: 3,
+    //     children: imageList
+    // );
+    return Scaffold(
+      body: GridView.count(
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 2,
+            crossAxisCount: 3,
+            children: imageList
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
     );
   }
   Widget _imageItem(String name) {
